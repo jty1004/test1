@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뮤직뱅크 - AI 가사 생성기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">🎵 뮤직뱅크</h1>
+            <p class="subtitle">AI가 당신의 이야기를 노래로 만들어드립니다</p>
+        </header>
+
+        <main class="main-content">
+            <!-- API 키 설정 섹션 -->
+            <section class="api-section">
+                <h2>🔑 API 설정</h2>
+                <div class="input-group">
+                    <label for="apiKey">Gemini API 키</label>
+                    <input type="password" id="apiKey" placeholder="API 키를 입력하세요">
+                    <button id="saveApiKey" class="btn btn-primary">저장</button>
+                </div>
+                <p class="help-text">API 키는 안전하게 로컬에 저장됩니다</p>
+            </section>
+
+            <!-- 가사 생성 섹션 -->
+            <section class="generation-section">
+                <h2>✨ 가사 생성</h2>
+                <div class="input-group">
+                    <label for="topic">주제나 내용을 입력하세요</label>
+                    <textarea id="topic" placeholder="예: 사랑하는 사람과의 이별, 새로운 시작에 대한 설렘, 친구와의 추억 등..."></textarea>
+                </div>
+                <button id="generateLyrics" class="btn btn-generate">🎤 가사 생성하기</button>
+            </section>
+
+            <!-- 로딩 상태 -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>AI가 가사를 작성하고 있어요...</p>
+            </div>
+
+            <!-- 결과 섹션 -->
+            <section id="result" class="result-section hidden">
+                <h2>🎶 생성된 가사</h2>
+                <div class="result-content">
+                    <div class="song-info">
+                        <h3>노래 스타일</h3>
+                        <div id="songStyle" class="style-box"></div>
+                    </div>
+                    <div class="lyrics-info">
+                        <h3>가사</h3>
+                        <div id="lyrics" class="lyrics-box"></div>
+                    </div>
+                    <div class="copy-section">
+                        <button id="copyAll" class="btn btn-copy">📋 전체 복사</button>
+                        <button id="copyStyle" class="btn btn-copy">🎵 스타일만 복사</button>
+                        <button id="copyLyrics" class="btn btn-copy">📝 가사만 복사</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by Gemini AI • SUNO AI와 함께 사용하세요</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
